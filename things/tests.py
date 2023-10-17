@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .forms import ThingsForm
+from .forms import ThingForm
 
 # Create your tests here.
 def setUp(self):
@@ -11,11 +11,11 @@ def setUp(self):
 
 #test 
 def test_valid_input(self):
-    form = ThingsForm(data=self.form_input)
+    form = ThingForm(data=self.form_input)
     self.assertTrue(form.is_valid())
   
 def test_quantity_must_be_under_50(self):
     self.form_input["quantity"] = 51
-    form = ThingsForm(data=self.form_input)
+    form = ThingForm(data=self.form_input)
     self.assertFalse(form.is_valid())
 
